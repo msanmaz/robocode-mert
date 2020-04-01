@@ -22,7 +22,7 @@ public class MertOsanmaz extends Robot {
 		setRadarColor(Color.darkGray);
 
 		while (true) {
-			turnRight(5 * turnDirection);
+			turnRight(20 * turnDirection); // changed
 		}
 	}
 
@@ -32,9 +32,9 @@ public class MertOsanmaz extends Robot {
 	public void onScannedRobot(ScannedRobotEvent e) {
 
 		if (e.getBearing() >= 0) {
-			turnDirection = 1;
+			turnDirection = 4; //changed
 		} else {
-			turnDirection = -1;
+			turnDirection = -4; //changed
 		}
 
 		turnRight(e.getBearing());
