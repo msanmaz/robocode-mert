@@ -8,15 +8,7 @@ import robocode.ScannedRobotEvent;
 import java.awt.*;
 
 
-/**
- * RamFire - a sample robot by Mathew Nelson.
- * <p>
- * Drives at robots trying to ram them.
- * Fires when it hits them.
- *
- * @author Mathew A. Nelson (original)
- * @author Flemming N. Larsen (contributor)
- */
+
 public class MertOsanmaz extends Robot {
 	int turnDirection = 1; // Clockwise or counterclockwise
 
