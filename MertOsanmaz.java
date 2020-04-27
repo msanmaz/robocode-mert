@@ -10,7 +10,7 @@ import java.awt.*;
 
 
 public class MertOsanmaz extends Robot {
-	int turnDirection = 1; // Clockwise or counterclockwise
+	int turnDirection = 2; // Clockwise or counterclockwise
 
 	/**
 	 * run: Spin around looking for a target
@@ -22,13 +22,11 @@ public class MertOsanmaz extends Robot {
 		setRadarColor(Color.darkGray);
 
 		while (true) {
-			turnRight(20 * turnDirection); // changed
+			turnRight(40 * turnDirection); // changed
 		}
 	}
 
-	/**
-	 * onScannedRobot:  We have a target.  Go get it.
-	 */
+
 	public void onScannedRobot(ScannedRobotEvent e) {
 
 		if (e.getBearing() >= 0) {
@@ -47,15 +45,14 @@ public class MertOsanmaz extends Robot {
 	 */
 	public void onHitRobot(HitRobotEvent e) {
 		if (e.getBearing() >= 0) {
-			turnDirection = 1;
+			turnDirection = 3;
 		} else {
 			turnDirection = -1;
 		}
 		turnRight(e.getBearing());
 
-		// Determine a shot that won't kill the robot...
-		// We want to ram him instead for bonus points
-		if (e.getEnergy() > 16) {
+
+		if (e.getEnergy() > 12) {
 			fire(3);
 		} else if (e.getEnergy() > 10) {
 			fire(2);
